@@ -1,0 +1,33 @@
+<!-- contactPhotoUploader.html -->
+<template>
+    <lightning-card title="Contact Photo" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <template if:true={contactId}>
+                <div class="slds-align_absolute-center">
+                    <template if:true={photoUrl}>
+                        <img src={photoUrl} class="photo-preview" />
+                    </template>
+                    <template if:false={photoUrl}>
+                        <div class="slds-avatar slds-avatar_large placeholder">
+                            <span class="slds-avatar__initials slds-icon-custom-26">?</span>
+                        </div>
+                    </template>
+                </div>
+
+                <div class="slds-m-top_medium slds-grid slds-grid_align-spread">
+                    <lightning-input type="file" 
+                                   accept="image/jpeg, image/png" 
+                                   label="Upload Photo" 
+                                   onchange={handleFileSelected}>
+                    </lightning-input>
+                    
+                    <lightning-button variant="destructive" 
+                                    label="Delete Photo" 
+                                    onclick={handleDeletePhoto}
+                                    disabled={!photoUrl}>
+                    </lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

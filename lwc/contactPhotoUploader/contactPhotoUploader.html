@@ -1,0 +1,57 @@
+<!-- contactPhotoUploader.html -->
+<template>
+<lightning-card title={cmpTitle} icon-name="standard:contact">
+    <div class="slds-p-around_medium">
+        <template if:true={photoUrl}>
+            <div class="slds-align_absolute-center">
+                    <img src={photoUrl} class="photo-preview" width={photoWidth} height={photoHeight} />
+                    <!-- style="display: block;
+                    max-width:350px;
+                    max-height:350px;
+                    width: auto;
+                    height: auto;"-->
+                    <!--   -->
+
+            </div>
+            <div class="slds-m-top_medium slds-grid slds-grid_align-spread slds-align_absolute-center">
+                <lightning-button 
+                    label="Delete" 
+                    variant="destructive" 
+                    onclick={handleDeletePhoto} 
+                    disabled={isDeleteDisabled}>
+                </lightning-button>
+            </div>
+        </template>
+            <!--
+            <div class="slds-m-top_medium slds-grid slds-grid_align-spread">
+                <lightning-input type="file" 
+                                accept="image/jpeg, image/png" 
+                                label="Upload Photo" 
+                                onchange={handleFileSelected}>
+                </lightning-input>
+                https://www.salesforce.com/blog/wp-content/uploads/sites/2/2021/12/2021-12-360Blog-2D-IndividualIllustrations-Einstien.png
+                https://www.salesforce.com/blog/wp-content/uploads/sites/2/2021/12/2021-12-360Blog-2D-IndividualIllustrations-Astro.png
+
+            </div> -->
+
+            <template if:false={photoUrl}>
+                <div class="slds-align_absolute-center">
+                    <img class="photo-preview" width={photoWidth} height={photoHeight} src={defaultPhoto}  />
+                </div>  
+                <div class="slds-m-top_medium slds-grid slds-grid_align-spread slds-align_absolute-center">
+                    <lightning-file-upload 
+                        label="Upload Contact Photo" 
+                        name="uploadFile" 
+                        accept={acceptedFormats}
+                        record-id={recordId} 
+                        file-field-name="CV_File_Type_fileupload__c" 
+                        file-field-value={fileType} 
+                        onuploadfinished={handleUploadFinished}
+                    >
+                    </lightning-file-upload>
+                </div>
+            </template>
+ 
+    </div>
+</lightning-card>
+</template>

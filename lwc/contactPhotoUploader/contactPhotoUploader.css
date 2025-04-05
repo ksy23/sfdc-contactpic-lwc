@@ -1,0 +1,11 @@
+.photo-preview {
+    display: block;
+
+}
+.placeholder {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f2f2;
+    border-radius: 50%;
+}

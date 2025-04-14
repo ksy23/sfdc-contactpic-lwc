@@ -21,4 +21,4 @@ LWC for Salesforce to add a photo of a Contact / person on the Contact page.
 
 ## TO DO:
 - Finish Test class.
-- Add screenshots
+

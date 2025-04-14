@@ -14,6 +14,11 @@ LWC for Salesforce to add a photo of a Contact / person on the Contact page.
 - Image uploaded is named "ContactPhoto"
 - Only one Contact Photo is allowed at a time.  Delete before changing.
 
+## Screenshots:
+![ALT TEXT](/screenshots/1.png?raw=true "Default Photo")
+
+![ALT TEXT](/screenshots/2.png?raw=true "Uploaded Photo")
+
 ## TO DO:
 - Finish Test class.
 - Add screenshots
